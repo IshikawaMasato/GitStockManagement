@@ -27,8 +27,8 @@ public class StockManagementDao {
 
 		return DriverManager.getConnection(dbUrl, username, password);
 	}
-	public static int registerECsiteProduct(StockManagement product) {
-		String sql = "INSERT INTO ECsiteProduct VALUES(default, ?, ?, ?, ?, ?, current_timestamp)";
+	public static int registerStockProduct(StockManagement product) {
+		String sql = "INSERT INTO Stock VALUES(default, ?, ?, ?, ?, ?, current_timestamp)";
 		int result = 0;
 
 		try (
