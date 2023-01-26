@@ -70,10 +70,10 @@ public class StockManagementDao {
 			System.out.println(result + "件削除しました。");
 		}
 	}
-	public static List<StockManagement> selectAllProduct(){
+	public static List<StockManagement> SelectAllList(){
 
 		// 実行するSQL
-		String sql = "SELECT * FROM ECsiteProduct";
+		String sql = "SELECT * FROM Stock";
 
 		// 返却用のListインスタンス
 		List<StockManagement> result = new ArrayList<>();
@@ -86,14 +86,14 @@ public class StockManagementDao {
 
 				while(rs.next()) {
 					int id = rs.getInt("id");
-					String productId = rs.getString("productId");
-					String productName = rs.getString("productName");
-					String productCategory = rs.getString("productCategory");
-					int productPrice=rs.getInt("productPrice");
-					String productNote = rs.getString("productNote");
+					String StockId = rs.getString("StockId");
+					String StockName = rs.getString("StockName");
+					String StockCategory = rs.getString("StockCategory");
+					int StockPrice=rs.getInt("StockPrice");
+					String StockNote = rs.getString("StockNote");
 					String created_at = rs.getString("created_at");
 
-					StockManagement product = new StockManagement(id, productId, productName, productCategory, productPrice, productNote, created_at);
+					StockManagement product = new StockManagement(id, StockId, StockName, StockCategory, StockPrice, StockNote, created_at);
 					result.add(product);
 				}
 			}
