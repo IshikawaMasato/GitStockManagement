@@ -51,8 +51,8 @@ public class StockManagementDao {
 		}
 		return result;
 	}
-	public static void deleteECsiteProduct(String StockId) {
-		String sql = "DELETE FROM ECsiteProduct WHERE StockId = ?";
+	public static void deletestockManagement(String StockId) {
+		String sql = "DELETE FROM Stock WHERE StockId = ?";
 		int result = 0;
 
 		try (
@@ -62,7 +62,7 @@ public class StockManagementDao {
 
 			pstmt.setString(1, StockId);
 
-			result = pstmt.executeUpdate();
+			result = pstmt.executeUpdate();	
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (URISyntaxException e) {
